@@ -1,5 +1,5 @@
 Summary:	Jumble Library for Tcl and Friends
-Summary(pl):	Zestaw skryptów dla Tcl i powi±zanych.
+Summary(pl):	Zestaw skryptów dla Tcl i powi±zanych
 Name:		jultaf
 Version:	0.0.9
 Release:	1
@@ -9,11 +9,13 @@ Group(de):	Entwicklung/Sprachen/Tcl
 Group(pl):	Programowanie/Jêzyki/Tcl
 Source0:	http://www.linuxia.de/jultaf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-build.patch
+Patch1:		%{name}-info.patch
 URL:		http://www.linuxia.de/jultaf/
 BuildRequires:	tcl-devel
 BuildRequires:	postgresql-devel
 BuildRequires:	gdbm-devel
 BuildRequires:	texinfo
+Prereq:		/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,6 +43,7 @@ Jultaf to kolekcja skryptów Tcl/[incr Tcl] oraz ³adowalnych modu³ów:
 %prep
 %setup  -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 CPPFLAGS="-I%{_includedir}/pgsql"; export CPPFLAGS
