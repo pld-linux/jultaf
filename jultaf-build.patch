@@ -1,0 +1,61 @@
+diff -urN jultaf-0.0.9.org/Makefile.in jultaf-0.0.9/Makefile.in
+--- jultaf-0.0.9.org/Makefile.in	Fri Apr  6 14:38:06 2001
++++ jultaf-0.0.9/Makefile.in	Fri Apr  6 14:46:47 2001
+@@ -230,13 +230,10 @@
+ # ==============
+ 
+ $(htmloutdir)/%.html: $(docsrcdir)/%.sgml
+-	${SGML2HTML} ${TRANS_FLAGS} --srcdir=${docsrcdir} --output-file=$(htmloutdir) $(notdir $<)
+ 
+ $(htmloutdir)/%.html: $(docsrcdir)/%.tcl
+-	${SGML2HTML} --script=$< --output-file=$@ --log-file=$*.log --srcdir=$(docsrcdir)
+ 
+ %.texi: $(docsrcdir)/%.sgml
+-	${SGML2TEXI} ${TRANS_FLAGS} --srcdir=${docsrcdir} $(notdir $<)
+ 
+ %.info: %.texi
+ 	${MAKEINFO} $<
+@@ -467,7 +464,7 @@
+ INTRODOCUMENTS = $(INTROTXTDOCUMENT)
+ INCLUDEDSCRIPTS = intro.tcl requires.tcl newsdigest.tcl license.tcl
+ 
+-distdoc: $(NEWSDOCUMENTS) $(READMEDOCUMENTS) $(INTRODOCUMENTS)
++distdoc:
+ 
+ maintainer-clean-distdoc:
+ 	-rm $(NEWSDOCUMENTS) $(READMEDOCUMENTS)
+diff -urN jultaf-0.0.9.org/bootstrap.tcl jultaf-0.0.9/bootstrap.tcl
+--- jultaf-0.0.9.org/bootstrap.tcl	Fri Apr  6 14:38:06 2001
++++ jultaf-0.0.9/bootstrap.tcl	Fri Apr  6 14:38:22 2001
+@@ -29,6 +29,7 @@
+ source "@srcdir@/flow.tcl"
+ source "@srcdir@/getopts.tcl"
+ source "@srcdir@/code.tcl"
++source "@srcdir@/string.tcl"
+ source "@srcdir@/file.tcl"
+ source "@srcdir@/libtool.tcl"
+ 
+diff -urN jultaf-0.0.9.org/gdbm/Makefile.in jultaf-0.0.9/gdbm/Makefile.in
+--- jultaf-0.0.9.org/gdbm/Makefile.in	Fri Apr  6 14:38:06 2001
++++ jultaf-0.0.9/gdbm/Makefile.in	Fri Apr  6 14:57:26 2001
+@@ -165,7 +165,7 @@
+ 	${SHARED_LD} ${ALL_SHARED_LDFLAGS} -lgdbm -o $@ $<
+ 	echo 'set state [catch "load ./${SHARED_LIB}" res]; if {$$state == 1} {puts stderr $$errorInfo}; exit $$state' | $(TCLSH)
+ 
+-gdbm.c: jufgdbm.h $(includedir)/juf.h
++gdbm.c: jufgdbm.h $(top_srcdir)/include/juf.h
+ 
+ # =======
+ # Library
+diff -urN jultaf-0.0.9.org/prof/Makefile.in jultaf-0.0.9/prof/Makefile.in
+--- jultaf-0.0.9.org/prof/Makefile.in	Fri Apr  6 14:38:06 2001
++++ jultaf-0.0.9/prof/Makefile.in	Fri Apr  6 14:58:27 2001
+@@ -172,7 +172,7 @@
+ 	${SHARED_LD} ${ALL_SHARED_LDFLAGS} -o $@ $(SHOBJFILES)
+ 	echo 'set state [catch "load ./${SHARED_LIB}" res]; if {$$state == 1} {puts stderr $$errorInfo}; exit $$state' | $(TCLSH)
+ 
+-prof.c: $(includedir)/juf.h
++prof.c: $(top_srcdir)/include/juf.h
+ 
+ # =======
+ # Library
