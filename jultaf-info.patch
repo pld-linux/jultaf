@@ -1,0 +1,27 @@
+diff -Nru jultaf-0.0.9/jultaf.texi jultaf-0.0.9.new/jultaf.texi
+--- jultaf-0.0.9/jultaf.texi	Sat Jan 23 23:49:22 1999
++++ jultaf-0.0.9.new/jultaf.texi	Sat Apr  7 00:29:26 2001
+@@ -1,9 +1,9 @@
+ \input texinfo @c -*-Texinfo-*-
+ @setfilename jultaf.info
+ @defindex pk
+-@dircategory Tcl and Friends
++@dircategory Tcl tools:
+ @direntry
+-* Jultaf: (jultaf). The Jumble Library for Tcl and Friends.
++* Jultaf: (jultaf).			The Jumble Library for Tcl and Friends
+ @end direntry
+ 
+ @node Top, , , (dir)
+diff -Nru jultaf-0.0.9/jultaf.texi jultaf-0.0.9.new/jultaf.texi
+--- jultaf-0.0.9/jultaf.texi	Sat Jan 23 23:49:22 1999
++++ jultaf-0.0.9.new/jultaf.texi	Sat Apr  7 00:34:49 2001
+@@ -162,7 +162,7 @@
+  
+ 
+ @table @asis
+-@item @code{Juf::Error::fault} @var{TYPE} @var{[ARG ...]}
++@item @code{Juf::Error::fault} @var{TYPE} [@var{ARG ...}]
+ Generates an Tcl error. The message is composed of an template specified by
+ TYPE and the remaining arguments: 
+ 
