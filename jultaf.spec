@@ -57,8 +57,6 @@ install -d $RPM_BUILD_ROOT%{_prefix}
 
 %{makeinstall}
 
-gzip -9nf CREDITS Change* NEWS README
-
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 /sbin/ldconfig
@@ -73,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc html/*.{html,gif,css}
-%doc *.gz
+%doc CREDITS Change* NEWS README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_datadir}/jultaf*
