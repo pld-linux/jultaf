@@ -6,6 +6,7 @@ Release:	2
 License:	BSD
 Group:		Development/Languages/Tcl
 Source0:	http://www.linuxia.de/jultaf/%{name}-%{version}.tar.gz
+# Source0-md5:	00ab6b112fa775e0dc4420d615a554e9
 Patch0:		%{name}-build.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.linuxia.de/jultaf/
