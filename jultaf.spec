@@ -59,8 +59,13 @@ install -d $RPM_BUILD_ROOT%{_prefix}
 
 gzip -9nf CREDITS Change* NEWS README
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+/sbin/ldconfig
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+/sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
