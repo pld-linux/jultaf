@@ -5,8 +5,6 @@ Version:	0.0.9
 Release:	1
 License:	BSD
 Group:		Development/Languages/Tcl
-Group(de):	Entwicklung/Sprachen/Tcl
-Group(pl):	Programowanie/Jêzyki/Tcl
 Source0:	http://www.linuxia.de/jultaf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-build.patch
 Patch1:		%{name}-info.patch
