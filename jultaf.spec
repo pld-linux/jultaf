@@ -1,5 +1,5 @@
 Summary:	Jumble Library for Tcl and Friends
-Summary(pl):	Zestaw skrypt體 dla Tcl i powi眤anych
+Summary(pl.UTF-8):   Zestaw skrypt贸w dla Tcl i powi膮zanych
 Name:		jultaf
 Version:	0.0.9
 Release:	2
@@ -29,14 +29,14 @@ Jultaf is labeled as alpha software. Nevertheless many parts are quite
 stable and functional. The profiling extension is experimental and the
 mSQL extension untested.
 
-%description -l pl
-Jultaf to kolekcja skrypt體 Tcl/[incr Tcl] oraz 砤dowalnych modu丑w:
-- typowe funkcje do obs硊gi list, tablic i modyfikacji string體
-- funkcje do obs硊gi i interpretacji b酬d體 w kodzie
-- rozszerzenie do profilowania skrypt體 Tcl
-- rozszerzenia umo縧iwiaj眂e dost阷 do baz GDBM, RPM, Postgres oraz
+%description -l pl.UTF-8
+Jultaf to kolekcja skrypt贸w Tcl/[incr Tcl] oraz 艂adowalnych modu艂贸w:
+- typowe funkcje do obs艂ugi list, tablic i modyfikacji string贸w
+- funkcje do obs艂ugi i interpretacji b艂臋d贸w w kodzie
+- rozszerzenie do profilowania skrypt贸w Tcl
+- rozszerzenia umo偶liwiaj膮ce dost臋p do baz GDBM, RPM, Postgres oraz
   mSQL
-- skrypt do generowania indeks體 plik體 w pakietach
+- skrypt do generowania indeks贸w plik贸w w pakietach
 
 %prep
 %setup	-q
