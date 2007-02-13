@@ -1,5 +1,5 @@
 Summary:	Jumble Library for Tcl and Friends
-Summary(pl.UTF-8):   Zestaw skryptów dla Tcl i powiązanych
+Summary(pl.UTF-8):	Zestaw skryptów dla Tcl i powiązanych
 Name:		jultaf
 Version:	0.0.9
 Release:	2
