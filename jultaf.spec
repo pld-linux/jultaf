@@ -76,4 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_datadir}/jultaf*
-%{_infodir}/*
+%{_infodir}/*.info*
