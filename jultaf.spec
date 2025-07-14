@@ -40,8 +40,8 @@ Jultaf to kolekcja skryptów Tcl/[incr Tcl] oraz ładowalnych modułów:
 
 %prep
 %setup	-q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 CPPFLAGS="-I%{_includedir}/pgsql"; export CPPFLAGS
